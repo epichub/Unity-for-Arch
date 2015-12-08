@@ -3,12 +3,12 @@
 # Contributor: thn81 <root@scrat>
 
 # vercheck-pkgbuild: auto
-# vercheck-ubuntu: name=bamf, repo=vivid
+# vercheck-ubuntu: name=bamf, repo=wily
 # vercheck-launchpad: name=bamf
 
 pkgname=bamf-ubuntu
-_actual_ver=0.5.1
-_extra_ver=+15.04.20150202
+_actual_ver=0.5.2
+_extra_ver=+15.10.20150627.1_0ubuntu1
 pkgver=${_actual_ver}${_extra_ver/+/.}
 pkgrel=1
 pkgdesc="Removes the headache of applications matching into a simple DBus daemon and c wrapper library"

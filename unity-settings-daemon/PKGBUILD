@@ -1,7 +1,7 @@
 # Maintainer: Xiao-Long Chen <chenxiaolong@cxl.epac.to>
 
 # vercheck-pkgbuild: auto
-# vercheck-ubuntu: name=${pkgname}, repo=vivid
+# vercheck-ubuntu: name=${pkgname}, repo=wily
 
 pkgname=unity-settings-daemon
 _actual_ver=15.04.1

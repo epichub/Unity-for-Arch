@@ -22,6 +22,14 @@ index ba8df8a..a5d66e8 100644
  AM_INIT_AUTOMAKE(libindicate, 12.10.1)
  
  AM_MAINTAINER_MODE
+@@ -156,5 +156,5 @@ if test "x$RUNTIME" != "no" ; then
+      RUNTIME=mono
+   fi
+-   AC_PATH_PROG(CSC, gmcs, no)
++   AC_PATH_PROG(CSC, mcs, no)
+   LIB_PREFIX=.so
+   LIB_SUFFIX=
+fi
 diff --git a/libindicate-gtk/Makefile.am b/libindicate-gtk/Makefile.am
 index 87c392a..1001ebe 100644
 --- a/libindicate-gtk/Makefile.am

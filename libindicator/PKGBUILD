@@ -3,7 +3,7 @@
 # Contributor: thn81 <root@scrat>
 
 # vercheck-pkgbuild: auto
-# vercheck-ubuntu: name=${pkgname}, repo=vivid
+# vercheck-ubuntu: name=${pkgname}, repo=wily
 # vercheck-launchpad: name=${pkgname}
 
 pkgbase=libindicator
@@ -19,9 +19,16 @@ url="https://launchpad.net/libindicator"
 license=(GPL)
 makedepends=(gtk2 gtk3 glib2 ido)
 groups=(unity)
-source=("https://launchpad.net/ubuntu/+archive/primary/+files/${pkgbase}_${_actual_ver}${_extra_ver}.orig.tar.gz")
-sha512sums=('b624b229755ae73f74b2197d4fb6d49f5d0b8b3fdc6686d6140a0b087e0b6a53dcd663fa2195c61d3bc61a11249867a45c1b8b7476e0d00b89a92f849f66eda2')
+source=("https://launchpad.net/ubuntu/+archive/primary/+files/${pkgbase}_${_actual_ver}${_extra_ver}.orig.tar.gz"
+	"libm.patch"
+)
+sha512sums=('b624b229755ae73f74b2197d4fb6d49f5d0b8b3fdc6686d6140a0b087e0b6a53dcd663fa2195c61d3bc61a11249867a45c1b8b7476e0d00b89a92f849f66eda2'
+            '2e599437b59f6c61e9491b1809b855d269ba5c7912a3df4357463de23fd7d5ed274faea997d106b111e8f0aa2d9dc6a7174f8ceae9ba70996c1f6732214e3b66')
+prepare() {
+  cd "libindicator-${_actual_ver}${_extra_ver}"
+  patch -p1 -i ../libm.patch
 
+}
 build() {
   cd "${pkgbase}-${_actual_ver}${_extra_ver}"
 
